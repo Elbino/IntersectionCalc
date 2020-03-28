@@ -6,7 +6,7 @@ export class IntersectionCalculator {
       let numbers: number[] = string.split(",").map(Number);
       concatArr = concatArr.concat(numbers);
     }
-    return this.getNonUniqueNumbers(this.sortArray(concatArr)).toString();
+    return this.getNonUniqueNumbers(concatArr).toString();
   }
 
   private sortArray(input: number[]): number[] {
@@ -14,10 +14,11 @@ export class IntersectionCalculator {
   }
 
   private getNonUniqueNumbers(input: number[]): number[] {
+    let sortedInput: number[] = this.sortArray(input);
     let result: number[] = [];
-    for (let i = 0; i < input.length; i++) {
-        if (input[i + 1] == input[i]){
-          result.push(input[i]);
+    for (let i = 0; i < sortedInput.length; i++) {
+        if (sortedInput[i + 1] === sortedInput[i]){
+          result.push(sortedInput[i]);
         }
     }
     return result;

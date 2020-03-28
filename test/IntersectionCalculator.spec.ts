@@ -16,8 +16,8 @@ describe("IntersectionCalculator, when given a string array with comma seperated
   });
 
 test("2: should return a comma seperated string with the overlapping numbers for each index position.", () => {
-    const input: string[] = ["1, 3, 9, 10, 17, 18", "1, 4, 9, 10"];
-    const expectedResult: string = "1,9,10";
+    const input: string[] = ["11, 12, 14, 16, 20", "11, 12, 13, 18, 21"];
+    const expectedResult: string = "11,12";
     expect(instance).toBeInstanceOf(IntersectionCalculator);
     expect(instance.findIntersection(input)).toEqual(expectedResult);
   });
